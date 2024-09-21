@@ -1,0 +1,13 @@
+.dropdown-menu {
+    background-color: #ffffff; /* Màu nền của dropdown menu */
+}
+
+.dropdown-item:hover {
+    background-color:#212529; /* Màu nền khi di chuột qua */
+    color:  #f8f9fa; /* Màu chữ khi di chuột qua */
+}
+
+.card-hover:hover {
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2); /* Tạo đổ bóng */
+    transition: all 0.4s ease; /* Tạo hiệu ứng mượt */
+  }
