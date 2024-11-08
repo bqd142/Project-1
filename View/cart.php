@@ -54,7 +54,7 @@ $total = 0;
         </tr>
         <tr>
             <td colspan="3"> </td>
-            <td colspan="2"> <button type="button" class="btn btn-danger" style="height:60px; width:150px; margin-left:300px"; >Thanh toán</button> </td>
+            <td colspan="2"> <button type="submit" class="btn btn-danger" style="height:60px; width:150px; margin-left:300px"; >Thanh toán</button> </td>
         </tr>
     </table>
 </div>

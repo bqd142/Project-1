@@ -66,7 +66,7 @@ $_SESSION['timeout'] = time();
                       <li><a class="dropdown-item" href="#">Đăng ký</a></li>
                     </ul>
                 </div>   
-                <a href="#" class="text-light" style="margin-left: 15px;"><i class="fa-solid fa-cart-shopping"></i></a>             
+                <a href="cart.php" class="text-light" style="margin-left: 15px;"><i class="fa-solid fa-cart-shopping"></i></a>             
             </div> 
         </div>        
     </nav>

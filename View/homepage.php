@@ -79,55 +79,36 @@ if(isset($_POST['txtsub'])){
         </div>
     </div>
     </form>
-    
+    <?php
+        include ("../Model/product.php");
+        $model = new product();
+    ?>
     <div style="background-color: aliceblue;" class="pb-3"> <!--bánh trung thu--> 
         <h3 class="text-center mt-5 pt-4 text-danger">BÁNH TRUNG THU LẠNH 2024</h3>
         <div class="container mt-5">
-            <div class="row">
+            
+        <div class="row">
+            <?php
+            $sl = $model->select_danhmuc("Bánh trung thu");
+                $count = 0;
+                foreach($sl as $row){ 
+                    $count++;  
+            ?>
                 <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
+                    <a href="chitietsanpham.php?id=<?php echo $row['id_product'];?>" class="d-flex justify-content-center" style="text-decoration: none;">
                         <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/banhtrungthu4.jpg" alt="Bánh thạch hoa quả">
+                            <img class="card-img-top" src="../upload/<?php echo$row['hinhanh'];?>">
                             <div class="card-body">
-                                <h5 class="card-title text-center text-muted">Bánh trung thu lạnh vị chanh leo</h5>
-                                <p class="text-center d-block text-muted h6 my-4">150.000đ</p>
+                                <h5 class="card-title text-center text-muted"><?php echo $row['tensp'] ?></h5>
+                                <p class="text-center d-block text-muted h6 my-4"><?php echo $row['gia'] ?></p>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                        <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/banhtrungthu1.jpg" alt="Bánh thạch hoa quả">
-                            <div class="card-body">
-                                <h5 class="card-title text-center text-muted">Bánh trung thu lạnh vị trà sữa trân châu</h5>
-                                <p class="text-center d-block text-muted h6 my-4">150.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                        <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/banhtrungthu2.jpg" alt="Bánh thạch hoa quả">
-                            <div class="card-body">
-                                <h5 class="card-title text-center text-muted">Bánh trung thu lạnh vị kiwi</h5>
-                                <p class="text-center d-block text-muted h6 my-4">150.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                        <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/banhtrungthu3.jpg" alt="Bánh thạch hoa quả">
-                            <div class="card-body">
-                                <h5 class="card-title text-center text-muted">Bánh trung thu lạnh vị bạc hà</h5>
-                                <p class="text-center d-block text-muted h6 my-4">150.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <?php
+            if($count == 4) break;
+                }
+            ?>
             </div>
         </div>
         <button type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</button>
@@ -135,50 +116,28 @@ if(isset($_POST['txtsub'])){
     <div class="pb-3"> <!--bánh sinh nhật--> 
     <h3 class="text-center pt-4 text-danger" style="text-transform: uppercase;">Bánh sinh nhật Mousse-Phomat-Tiramisu</h3>
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-3">
-                <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                    <div  class="card card-hover" style="width:250px; border: 0;">
-                        <img class="card-img-top" src="Media/mousse1.jpg" alt="Bánh thạch hoa quả">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-muted">Mousse sữa chua cafe</h5>
-                            <p class="text-center d-block text-muted h6 my-4">260.000đ</p>
+    <div class="row">
+            <?php
+            $sl = $model->select_danhmuc("Bánh sinh nhật Mousse - Phomat - Tiramisu ");
+                $count = 0;
+                foreach($sl as $row){ 
+                    $count++;  
+            ?>
+                <div class="col-3">
+                    <a href="chitietsanpham.php?id=<?php echo $row['id_product'];?>" class="d-flex justify-content-center" style="text-decoration: none;">
+                        <div  class="card card-hover" style="width:250px; border: 0;">
+                            <img class="card-img-top" src="../upload/<?php echo$row['hinhanh'];?>">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-muted"><?php echo $row['tensp'] ?></h5>
+                                <p class="text-center d-block text-muted h6 my-4"><?php echo $row['gia'] ?></p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-3">
-                <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                    <div  class="card card-hover" style="width:250px; border: 0;">
-                        <img class="card-img-top" src="Media/mousse2.jpg" alt="Bánh thạch hoa quả">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-muted">Mousse cam</h5>
-                            <p class="text-center d-block text-muted h6 my-4">260.000đ</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-3">
-                <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                    <div  class="card card-hover" style="width:250px; border: 0;">
-                        <img class="card-img-top" src="Media/mousse3.jpg" alt="Bánh thạch hoa quả">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-muted">Mousse sữa chua dâu</h5>
-                            <p class="text-center d-block text-muted h6 my-4">310.000đ</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-3">
-                <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                    <div  class="card card-hover" style="width:250px; border: 0;">
-                        <img class="card-img-top" src="Media/mousse4.jpg" alt="Bánh thạch hoa quả">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-muted">Mousse chanh</h5>
-                            <p class="text-center d-block text-muted h6 my-4">260.000đ</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+            <?php
+            if($count == 4) break;
+                }
+            ?>
             </div>
         </div>
     </div>
@@ -187,104 +146,60 @@ if(isset($_POST['txtsub'])){
     <div style="background-color: aliceblue;" class="pb-3"> <!--Bánh sinh nhật kem tươi-sc;--> 
         <h3 class="text-center pt-4 text-danger">Bánh sinh nhật kem tươi - Socola</h3>
         <div class="container mt-5">
-            <div class="row">
+        <div class="row">
+            <?php
+            $sl = $model->select_danhmuc("Bánh sinh nhật kem tươi - Socola");
+                $count = 0;
+                foreach($sl as $row){ 
+                    $count++;  
+            ?>
                 <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
+                    <a href="chitietsanpham.php?id=<?php echo $row['id_product'];?>" class="d-flex justify-content-center" style="text-decoration: none;">
                         <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/kemtuoi-scl1.jpg" alt="Bánh thạch hoa quả">
+                            <img class="card-img-top" src="../upload/<?php echo$row['hinhanh'];?>">
                             <div class="card-body">
-                                <h5 class="card-title text-center text-muted">PN20</h5>
-                                <p class="text-center d-block text-muted h6 my-4">350.000đ</p>
+                                <h5 class="card-title text-center text-muted"><?php echo $row['tensp'] ?></h5>
+                                <p class="text-center d-block text-muted h6 my-4"><?php echo $row['gia'] ?></p>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                        <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/kemtuoi-scl2.jpg" alt="Bánh thạch hoa quả">
-                            <div class="card-body">
-                                <h5 class="card-title text-center text-muted">PN21</h5>
-                                <p class="text-center d-block text-muted h6 my-4">390.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                        <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/kemtuoi-scl3.jpg" alt="Bánh thạch hoa quả">
-                            <div class="card-body">
-                                <h5 class="card-title text-center text-muted">Socola kem tươi</h5>
-                                <p class="text-center d-block text-muted h6 my-4">350.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                        <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/kemtuoi-scl4.jpg" alt="Bánh thạch hoa quả">
-                            <div class="card-body">
-                                <h5 class="card-title text-center text-muted">Gato kem tươi cam</h5>
-                                <p class="text-center d-block text-muted h6 my-4">290.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <?php
+            if($count == 4) break;
+                }
+            ?>
             </div>
+        </div>
         </div>
         <button type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</button>
     </div>
     <div> <!--Mini Cake--> 
         <h3 class="text-center mt-5 text-danger">MINI CAKE</h3>
         <div class="container mt-5">
-            <div class="row">
+        <div class="row">
+            <?php
+            $sl = $model->select_danhmuc("Mini Cake");
+                $count = 0;
+                foreach($sl as $row){ 
+                    $count++;  
+            ?>
                 <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
+                    <a href="chitietsanpham.php?id=<?php echo $row['id_product'];?>" class="d-flex justify-content-center" style="text-decoration: none;">
                         <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/minicake1.jpg" alt="Bánh thạch hoa quả">
+                            <img class="card-img-top" src="../upload/<?php echo$row['hinhanh'];?>">
                             <div class="card-body">
-                                <h5 class="card-title text-center text-muted">Pana Cotta Táo Xanh</h5>
-                                <p class="text-center d-block text-muted h6 my-4">29.000đ</p>
+                                <h5 class="card-title text-center text-muted"><?php echo $row['tensp'] ?></h5>
+                                <p class="text-center d-block text-muted h6 my-4"><?php echo $row['gia'] ?></p>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                        <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/minicake2.jpg" alt="Bánh thạch hoa quả">
-                            <div class="card-body">
-                                <h5 class="card-title text-center text-muted">Pana Cotta Mâm Xôi</h5>
-                                <p class="text-center d-block text-muted h6 my-4">29.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                        <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/minicake3.jpg" alt="Bánh thạch hoa quả">
-                            <div class="card-body">
-                                <h5 class="card-title text-center text-muted">Pana Cotta Xoài</h5>
-                                <p class="text-center d-block text-muted h6 my-4">29.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3">
-                    <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
-                        <div  class="card card-hover" style="width:250px; border: 0;">
-                            <img class="card-img-top" src="Media/minicake4.jpg" alt="Bánh thạch hoa quả">
-                            <div class="card-body">
-                                <h5 class="card-title text-center text-muted">Gusto cốm dừa</h5>
-                                <p class="text-center d-block text-muted h6 my-4">23.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <?php
+            if($count == 4) break;
+                }
+            ?>
             </div>
+        </div>
         </div>
         <button type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</button>
     </div>
