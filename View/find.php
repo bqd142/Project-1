@@ -35,8 +35,13 @@ include ("navbar.php");
         <?php 
             include ("../Model/product.php");
             $model = new product();
-            $sl = $model->select_danhmuc("Bánh sinh nhật Mousse - Phomat - Tiramisu");
+            
             $count = 0;
+            if(isset($_GET['select'])){
+                $tukhoa = $_GET['select'];
+                $sl = $model->select_find($tukhoa);
+            }
+            else $sl = $model->select_danhmuc("Bánh sinh nhật Mousse - Phomat - Tiramisu");
         ?>
         <div class="container">
                 <div class="row">

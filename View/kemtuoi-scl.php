@@ -21,12 +21,12 @@ include ("navbar.php");
             <div class=" rounded-3" style="width: 260px;">
                 <h3 style="height: 40px;" class="text-center bg-primary text-light">Danh Mục Bánh</h3>
                 <div class="list-group" style="margin-top: -7px;" >
-                    <a href="mousse.html" class="list-group-item list-group-item-action list-group-item-warning">> Bánh sinh nhật Mousse-Phomat-Tiramisu</a>
-                    <a href="kemtuoi-scl.html" class="list-group-item list-group-item-action list-group-item-warning">> Bánh sinh nhật Kem tươi - Socola</a>
-                    <a href="bentocake.html" class="list-group-item list-group-item-action list-group-item-warning">> Bánh sinh nhật Bento Cake</a>
-                    <a href="minicake.html" class="list-group-item list-group-item-action list-group-item-warning">> Mini Cake</a>
-                    <a href="begai.html" class="list-group-item list-group-item-action list-group-item-warning">> Bánh sinh nhật bé gái</a>
-                    <a href="betrai.html" class="list-group-item list-group-item-action list-group-item-warning">> Bánh sinh nhật bé trai</a>
+                    <a href="mouse.php" class="list-group-item list-group-item-action list-group-item-warning">> Bánh sinh nhật Mousse-Phomat-Tiramisu</a>
+                    <a href="kemtuoi-scl.php" class="list-group-item list-group-item-action list-group-item-warning">> Bánh sinh nhật Kem tươi - Socola</a>
+                    <a href="bentocake.php" class="list-group-item list-group-item-action list-group-item-warning">> Bánh sinh nhật Bento Cake</a>
+                    <a href="minicake.php" class="list-group-item list-group-item-action list-group-item-warning">> Mini Cake</a>
+                    <a href="begai.php" class="list-group-item list-group-item-action list-group-item-warning">> Bánh sinh nhật bé gái</a>
+                    <a href="betrai.php" class="list-group-item list-group-item-action list-group-item-warning">> Bánh sinh nhật bé trai</a>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@ include ("navbar.php");
                     $count++;     
                 ?>
                     <div class="col-4">
-                        <a href="#" class="d-flex justify-content-center" style="text-decoration: none;">
+                        <a href="chitietsanpham.php?id=<?php echo $row['id_product'];?>" class="d-flex justify-content-center" style="text-decoration: none;">
                             <div  class="card card-hover" style="width:250px; border: 0;">
                                 <img class="card-img-top" src="../upload/<?php echo$row['hinhanh'];?>">
                                 <div class="card-body">

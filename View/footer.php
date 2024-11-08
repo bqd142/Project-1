@@ -35,3 +35,14 @@
           </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Kiểm tra nếu session đã chứa thông báo
+        if (typeof sessionStorage.toastMessage !== 'undefined') {
+            toastr.success(sessionStorage.toastMessage);
+            sessionStorage.removeItem('toastMessage'); // Xóa thông báo sau khi hiển thị
+        }
+    });
+</script>

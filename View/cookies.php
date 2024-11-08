@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bánh Sinh nhật Mousse</title>
+        <title>Cookies - Macaron</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -11,12 +11,12 @@
         <link rel="icon" href="Media/logo.png" type="image/x-icon">
     </head>
 <body>
-<?php 
-include ("navbar.php");
+<?php
+include("navbar.php");
 ?>
     <img src="Media/vearigatouslide1.png" style="width: 100%;">
     <div class="container mt-5">
-       <div class="row">
+    <div class="row">
         <div class="col-3">
             <div class=" rounded-3" style="width: 260px;">
                 <h3 style="height: 40px;" class="text-center bg-primary text-light">Danh Mục Bánh</h3>
@@ -35,7 +35,7 @@ include ("navbar.php");
         <?php 
             include ("../Model/product.php");
             $model = new product();
-            $sl = $model->select_danhmuc("Bánh sinh nhật Mousse - Phomat - Tiramisu");
+            $sl = $model->select_danhmuc("Cookies - Macaroon");
             $count = 0;
         ?>
         <div class="container">
@@ -66,9 +66,10 @@ include ("navbar.php");
         </div>
        </div>
     </div>
-    
+    </div>
 <?php
-include ("footer.php");
+include("footer.php");
 ?>
+
 </body>
 </html>

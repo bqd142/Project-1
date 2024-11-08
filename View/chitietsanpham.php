@@ -38,10 +38,13 @@
                 <p>Các size bánh: Size 16 cho 3-4 người ăn; Size 18 cho 5 – 7 người ăn; Size 22 cho 9 – 11 người ăn; Size 25 cho 12-15 người ăn</p>
                 <p>Với bánh đặt theo yêu cầu Quý khách vui lòng đặt trước 24h – 48h để Origato phục vụ Quý khách chu đáo nhất!</p>
                 <p>Hotline tư vấn và đặt bánh: 0911.638.166</p>
+                <form method="post" action="../Control/add_cart.php">
                 <div class="input-group mb-3" style="width: 250px;">
-                    <input type="number" class="form-control" value="1" min="1" style="width: 40px;">
-                    <button class="btn btn-outline-danger" type="button">Thêm vào giỏ hàng</button>
+                    <input type="text" name="id_pro" class="form-control" value="<?php echo $sl_id['id_product']; ?>" style="display: none;">
+                    <input type="number" name="txtsl" class="form-control" value="1" min="1" style="width: 40px;">
+                    <button class="btn btn-outline-danger" type="submit" name="txtsub">Thêm vào giỏ hàng</button>
                 </div>
+                </form>
             </div>
             <div class="col-1"></div>
         </div>
@@ -61,7 +64,7 @@
         <hr style="width: 100%;">
         <h4>SẢN PHẨM LIÊN QUAN</h4>
         <?php
-            $sl = $model->select_notin_id($id);
+            $sl = $model->select_notin_id($sl_id['danhmuc'],$id);
             $count = 0;
         ?>
         <div class="container mt-5">
