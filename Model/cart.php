@@ -3,7 +3,7 @@
     class cart{
         public function sl_cart_id($ss_id){
             global $conn;
-            $sql="SELECT*FROM cart where session_id = '$ss_id'";
+            $sql="SELECT*FROM cart where session_id = '$ss_id' and donhang = 0";
             $run=mysqli_query($conn,$sql);
             return $run;
         }
@@ -27,11 +27,21 @@
             $run=mysqli_query($conn,$sql);
             return $run;
         }
-        public function delete_cart($ss_id){
+        public function delete_cart($ss_id) {
             global $conn;
-            $sql="delete cart 
-                where session_id = '$ss_id'";
-            $run=mysqli_query($conn,$sql);
+            $sql = "DELETE FROM cart WHERE session_id = '$ss_id' ";
+            $run = mysqli_query($conn, $sql);
             return $run;
         }
+        public function update_donhang($id_donhang,$ss_id ) {
+            global $conn;
+            $sql = "update cart set donhang = '$id_donhang' where session_id = '$ss_id'and donhang = 0";
+            $run = mysqli_query($conn, $sql);
+            return $run;
+        }
+
     }
+    
+    
+
+?>

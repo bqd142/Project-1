@@ -14,9 +14,9 @@
               <p>Chính sách đổi trả</p>
               <p>Liên hệ và góp ý</p>
               <p>Phương thức thanh toán</p>
-              <a href="#"> <i class="fa-brands fa-square-facebook"></i></a> 
-              <a href="#"> <i class="fa-brands fa-square-instagram"></i> </a>
-              <a href="#"> <i class="fa-brands fa-youtube"></i> </a>
+              <a href="#" style="font-size:35px; color:white; text-decoration: none"> <i class="bi bi-facebook"></i></a> 
+              <a href="#" style="font-size:35px; color:white; text-decoration: none"> <i class="bi bi-instagram"></i></a>
+              <a href="#" style="font-size:35px; color:white; text-decoration: none"> <i class="bi bi-youtube"></i> </a>
             </div>
             <div class="col-md-4">
               <h5>Liên hệ tư vấn</h5>
@@ -35,14 +35,3 @@
           </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<script>
-    $(document).ready(function() {
-        // Kiểm tra nếu session đã chứa thông báo
-        if (typeof sessionStorage.toastMessage !== 'undefined') {
-            toastr.success(sessionStorage.toastMessage);
-            sessionStorage.removeItem('toastMessage'); // Xóa thông báo sau khi hiển thị
-        }
-    });
-</script>

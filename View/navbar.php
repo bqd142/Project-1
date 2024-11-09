@@ -24,14 +24,14 @@ $_SESSION['timeout'] = time();
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mx-2">
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="veorigato.html">VỀ ORIGATO</a> 
+                        <a class="nav-link" href="veorigato.php">VỀ ORIGATO</a> 
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">TIN TỨC</a>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="tincongty.html">Tin công ty</a></li>
-                        <li><a class="dropdown-item" href="tintuyendung.html">Tin tuyển dụng</a></li>
-                        <li><a class="dropdown-item" href="tinkhuyenmai.html">Khuyến mãi hot</a></li>
+                        <li><a class="dropdown-item" href="tincongty.php">Tin công ty</a></li>
+                        <li><a class="dropdown-item" href="tintuyendung.php">Tin tuyển dụng</a></li>
+                        <li><a class="dropdown-item" href="tinkhuyenmai.php">Khuyến mãi hot</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

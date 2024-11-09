@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="icon" href="Media/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 <?php
@@ -52,12 +53,25 @@ $total = 0;
             <td colspan="4" style="font-size:22px; color:red;font-weight: 600;"> Tổng </td>
             <td style="font-size:22px;color:red;font-weight: 600;"> <?php echo $total ?> đ</td>
         </tr>
+        <form method="post">
         <tr>
             <td colspan="3"> </td>
-            <td colspan="2"> <button type="submit" class="btn btn-danger" style="height:60px; width:150px; margin-left:300px"; >Thanh toán</button> </td>
+            <td colspan="2"> <button class="btn btn-danger" name="txtsub" style="height:40px; width:150px; margin-left:300px;margin-top: 20px;">
+        Thanh toán
+        </button> </td>
         </tr>
+        </form>
     </table>
 </div>
+<?php
+if (isset($_POST['txtsub'])) {
+    if ($total == 0) {
+        echo "<script>alert('Đơn hàng trống');</script>";
+    } else {
+        echo "<script>window.location.href = '../View/thanhtoan.php';</script>";
+    }
+}
+?>
 <?php
 include("footer.php");
 ?>

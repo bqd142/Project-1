@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="icon" href="Media/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 <?php
@@ -16,7 +17,7 @@ include("navbar.php");
 ?>
     
        <!--slideshow--> 
-    <div id="demo" class="carousel slide" data-bs-ride="carousel" style="margin-top: 60px;">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel" style="margin-top: 35px;">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
           <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
@@ -111,12 +112,12 @@ if(isset($_POST['txtsub'])){
             ?>
             </div>
         </div>
-        <button type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</button>
+        <button type="button" class="btn btn-danger d-flex justify-content-center mx-auto mt-4 " style="width: 150px;">Xem thêm</button>
     </div>
     <div class="pb-3"> <!--bánh sinh nhật--> 
-    <h3 class="text-center pt-4 text-danger" style="text-transform: uppercase;">Bánh sinh nhật Mousse-Phomat-Tiramisu</h3>
+    <h3 class="text-center pt-4 text-danger pb-3" style="text-transform: uppercase;">Bánh sinh nhật Mousse-Phomat-Tiramisu</h3>
     <div class="container mt-5">
-    <div class="row">
+    <div class="row" >
             <?php
             $sl = $model->select_danhmuc("Bánh sinh nhật Mousse - Phomat - Tiramisu ");
                 $count = 0;
@@ -141,9 +142,11 @@ if(isset($_POST['txtsub'])){
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</button>
+    <button type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4" style="width: 150px;">Xem thêm</button>
+    <div style="height : 25px">&nbsp; </div>
+    <div> 
     </div>
-    <div style="background-color: aliceblue;" class="pb-3"> <!--Bánh sinh nhật kem tươi-sc;--> 
+    <div style="background-color: aliceblue;" class="pb-3"> <!--Bánh sinh nhật kem tươi-scl--> 
         <h3 class="text-center pt-4 text-danger">Bánh sinh nhật kem tươi - Socola</h3>
         <div class="container mt-5">
         <div class="row">
@@ -170,9 +173,9 @@ if(isset($_POST['txtsub'])){
             ?>
             </div>
         </div>
+        <button type="button" class="btn btn-danger d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</button> 
         </div>
-        <button type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</button>
-    </div>
+        
     <div> <!--Mini Cake--> 
         <h3 class="text-center mt-5 text-danger">MINI CAKE</h3>
         <div class="container mt-5">
@@ -202,6 +205,7 @@ if(isset($_POST['txtsub'])){
         </div>
         </div>
         <button type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</button>
+        <div style="height : 25px">&nbsp; </div>
     </div>
     <div class="container mt-5 pb-5"> <!--khuyến mãi--> 
         <div class="row">

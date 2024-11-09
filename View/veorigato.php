@@ -9,63 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="icon" href="Media/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-expand-xxl bg-dark navbar-dark fixed-top">
-    <div class="container">
-        <a href="homepage.html" class="navbar-brand">Origato</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Navbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="Navbar">
-            <ul class="navbar-nav mx-2">
-                <li class="nav-item mx-2">
-                    <a class="nav-link" href="veorigato.html">VỀ ORIGATO</a> 
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">TIN TỨC</a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="tincongty.html">Tin công ty</a></li>
-                    <li><a class="dropdown-item" href="tintuyendung.html">Tin tuyển dụng</a></li>
-                    <li><a class="dropdown-item" href="tinkhuyenmai.html">Khuyến mãi hot</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">BÁNH SINH NHẬT</a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="mousse.html">Bánh sinh nhật Mousse-Phomat-Tiramisu</a></li>
-                    <li><a class="dropdown-item" href="kemtuoi-scl.html">Bánh sinh nhật kem tươi - Socola</a></li>
-                    <li><a class="dropdown-item" href="bentocake.html">Bánh sinh nhật Bento Cake</a></li>                        
-                    <li><a class="dropdown-item" href="betrai.html">Bánh sinh nhật bé trai</a></li>
-                    <li><a class="dropdown-item" href="begai.html">Bánh sinh nhật bé gái</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link" href="banhtrungthu.html">BÁNH TRUNG THU 2024</a> 
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">SẢN PHẨM KHÁC</a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="minicake.html">Mini cake</a></li>
-                    <li><a class="dropdown-item" href="banhmi.html">Bánhmì dinh dưỡng</a></li>
-                    <li><a class="dropdown-item" href="banhpizza.html">Bánh pizza</a></li>
-                    <li><a class="dropdown-item" href="cookies.html">Cookies - Macaron</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="dropdown" style="margin-left: 370px;" >
-                <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
-                  <i class="fa-solid fa-user"></i>
-                </button>
-                <ul class="dropdown-menu" >
-                  <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
-                  <li><a class="dropdown-item" href="#">Đăng ký</a></li>
-                </ul>
-            </div>   
-            <a href="#" class="text-light" style="margin-left: 15px;"><i class="fa-solid fa-cart-shopping"></i></a>             
-        </div> 
-    </div>        
-</nav>
+<?php
+    include("navbar.php");
+?>
     <img src="Media/vearigatouslide1.png" style="width: 100%;">
     <div class="container mt-5" style="background-color:blanchedalmond; p {margin-bottom: 15px;}">  
         
@@ -89,42 +38,8 @@
     
 
 
-    <footer class="bg-dark text-light mt-5 p-5">
-        <div class="container">
-          <div class="row" style="margin-left:30px;">
-            <div class="col-md-4">
-              <h4>Thông tin về chúng tôi</h4>
-              <h6>Origato – Vị ngọt cuộc sống</h6>
-              <p class="mt-3">Email: bqd142@gmail.com</p>
-              <p>Điện thoại: 0346-765-412</p>
-              <img src="Media/bocongthuong.png">
-            </div>
-            <div class="col-md-4">
-              <h5>Hỗ trợ khách hàng</h5>
-              <p class="mt-3">Hướng dẫn đặt bánh online</p>
-              <p>Chính sách đổi trả</p>
-              <p>Liên hệ và góp ý</p>
-              <p>Phương thức thanh toán</p>
-              <a href="#"> <i class="fa-brands fa-square-facebook"></i></a> 
-              <a href="#"> <i class="fa-brands fa-square-instagram"></i> </a>
-              <a href="#"> <i class="fa-brands fa-youtube"></i> </a>
-            </div>
-            <div class="col-md-4">
-              <h5>Liên hệ tư vấn</h5>
-             
-              <p class="mt-3"> Hotline tư vấn và đặt bánh:</p>
-              <h6>0911 638 166 – 0243.863.2514</h6>
-              <h6>Khiếu nại và hỗ trợ: 0243.863.2514</h6>
-              <h6>Email: datbanhonline@haiha-kotobuki.com.vn</h6>
-              <p>Giờ làm việc: 8h00 – 16h30</p>
-            </div>
-          </div>
-          <div class="text-center mt-3">
-            <p>© 2024 Bùi Quang Độ. All rights reserved.</p>
-            <a href="#" class="text-light">Điều khoản sử dụng</a> | 
-            <a href="#" class="text-light">Chính sách bảo mật</a>
-          </div>
-        </div>
-    </footer>
+    <?php
+include("footer.php");
+?>
 </body>
 </html>

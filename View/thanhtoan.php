@@ -15,83 +15,86 @@
 <?php
 include("navbar.php");
 ?>
-    <div class="container" style="margin-top:120px; border-top: 2px solid gray; padding: 10px;"  >
-        <div class="row">
-        <form method="post" action="../Control/dathang.php">    
-        <div class="col-4" style="color:#EC1618;font-weight: 600;border-right: 2px solid gray; padding: 10px;">
-            <h4 > <i style="color:#4D372E;" class="bi bi-1-circle-fill"></i>Thông tin hoá đơn</h4>
-            <div class="d-flex"> 
-                <div style="display: inline-block; width: 200px;margin-top: 10px;">
-                    Tên* <input type="text" class="form-control" name="txtten">
+    <div class="container mt-5">
+        <form method="post" action="../Control/dathang.php">  
+            <div class="row">
+            <div class="col-4" style="color:#EC1618;font-weight: 600;border-right: 2px solid gray;">
+                <h4 > <i style="color:#4D372E;" class="bi bi-1-circle-fill"></i>Thông tin hoá đơn</h4>
+                <div class="d-flex"> 
+                    <div style="display: inline-block; width: 200px;margin-top: 10px;">
+                        Tên* <input type="text" class="form-control" name="txtten">
+                    </div>
+                    <div style="display: inline-block;width: 200px;margin-left: 27px;margin-top: 10px;">
+                        họ* <input type="text" class="form-control" name="txtho">
+                    </div>
                 </div>
-                <div style="display: inline-block;width: 200px;margin-left: 27px;margin-top: 10px;">
-                    họ* <input type="text" class="form-control" name="txtho">
+                <div style="margin-top: 10px;">
+                    Địa chỉ* <input type="text" class="form-control" name="txtdiachi">
+                </div>
+                <div  style="margin-top: 10px;">
+                    Số điện thoại* <input type="text" class="form-control" name="txtsdt">
+                </div>
+                <div  style="margin-top: 10px;">
+                    Ngày giờ nhận bánh <input type="text" class="form-control" name="txttime">
+                </div>
+                <div  style="margin-top: 10px;">
+                    Nội dung lời chúc <textarea name="txtloichuc" class="form-control" rows="4"> </textarea>
                 </div>
             </div>
-            <div style="margin-top: 10px;">
-                Địa chỉ* <input type="text" class="form-control" name="txtdiachi">
+            <div class="col-4" style="color:#EC1618;font-weight: 600;">
+                <h4  style="text-align: center;"> <i style="color:#4D372E;" class="bi bi-2-circle-fill"></i>Phương thức thanh toán</h4>
+                <p style="color: #4D372E;width: 300px;margin-left: 75px;border-bottom: 2px solid gray;">Đơn hàng sau khi có nhân viên gọi xác nhận sẽ thanh toán qua chuyển khoản</p>
             </div>
-            <div  style="margin-top: 10px;">
-                Số điện thoại* <input type="text" class="form-control" name="txtsdt">
-            </div>
-            <div  style="margin-top: 10px;">
-                Ngày giờ nhận bánh <input type="text" class="form-control" name="txttime">
-            </div>
-            <div  style="margin-top: 10px;">
-                Nội dung lời chúc <textarea name="txtloichuc" class="form-control" rows="4"> </textarea>
-            </div>
-        </div>
-        
-        <div class="col-4" style="color:#EC1618;font-weight: 600;">
-            <h4  style="text-align: center;"> <i style="color:#4D372E;" class="bi bi-2-circle-fill"></i>Phương thức thanh toán</h4>
-            <p style="color: #4D372E;width: 300px;margin-left: 75px;border-bottom: 2px solid gray;">Đơn hàng sau khi có nhân viên gọi xác nhận sẽ thanh toán qua chuyển khoản</p>
-        </div>
-        <div class="col-4" style="color:#EC1618;font-weight: 600;border-left: 2px solid gray; padding: 10px;">
-            <h4 > <i style="color:#4D372E;" class="bi bi-3-circle-fill"></i>Thông tin giỏ hàng</h4>
-            <table class="table">
-                <tr>
-                    <th>Sản phẩm</th>
-                    <th>Tổng</th>
-                </tr>
-                <?php
-                    
-                    include("../Model/cart.php");
-                    include("../Model/product.php");
+            <div class="col-4" style="color:#EC1618;font-weight: 600;border-left: 2px solid gray;">
+                <h4 > <i style="color:#4D372E;" class="bi bi-3-circle-fill"></i>Thông tin giỏ hàng</h4>
+                <table class="table">
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Tổng</th>
+                    </tr>
+                    <?php
+                        
+                        include("../Model/cart.php");
+                        include("../Model/product.php");
 
-                    $cart = new cart();
-                    $product = new product();
-                    $sl_cart = $cart->sl_cart_id(session_id());
-                    $total = 0;
-                    foreach($sl_cart as $row){
-                        $sl_pro = $product->select_id($row['product_id']);
-                        $sl_pro = $sl_pro->fetch_assoc();
-                ?>
-                <tr>
-                    <td><?php echo $sl_pro['tensp'] ?> x <?php echo $row['Soluong']?></td>
-                    <td><?php echo $sl_pro['gia'] ?></td>
-                    <?php $sum = $sl_pro['gia'] * $row['Soluong']; 
-                        $total+=$sum;
+                        $cart = new cart();
+                        $product = new product();
+                        $sl_cart = $cart->sl_cart_id(session_id());
+                        $total = 0;
+                        foreach($sl_cart as $row){
+                            $sl_pro = $product->select_id($row['product_id']);
+                            $sl_pro = $sl_pro->fetch_assoc();
                     ?>
-                </tr>
-                <?php
-                    }
-                ?>
-                <tr>
-                    <td>Tạm tính </td>
-                    <td> <?php echo$total; ?> đ</td>
-                </tr>
-                <tr>
-                    <td>Tổng </td>
-                    <td style="color:red; font-size:23px"> <?php echo$total; ?> đ</td>
-                </tr>
-                <tr>
-                    <input type="text" name="cart_id" class="form-control" value="<?php echo $row['cart_id']; ?>" style="display: none;">
-                    <td colspan="2"><button type="submit" class="btn btn-secondary" name="txtsub">Đặt hàng ngay</button> </td>
-                </tr>
-            </table>
-        </div>
+                    <tr>
+                        <td><?php echo $sl_pro['tensp'] ?> x <?php echo $row['Soluong']?></td>
+                        <td><?php echo $sl_pro['gia'] ?></td>
+                        <?php $sum = $sl_pro['gia'] * $row['Soluong']; 
+                            $total+=$sum;
+                        ?>
+                    </tr>
+                    <?php
+                        }
+                    ?>
+                    <tr>
+                        <td>Tạm tính </td>
+                        <td> <?php echo$total; ?> đ</td>
+                    </tr>
+                    <tr>
+                        <td>Tổng </td>
+                        <td style="color:red; font-size:23px"> <?php echo$total; ?> đ</td>
+                    </tr>
+                    <tr>
+                        <input type="text" name="cart_id" class="form-control" value="<?php echo $row['cart_id']; ?>" style="display: none;">
+                        <td colspan="2"><button type="submit" class="btn btn-secondary" name="txtsub">Đặt hàng ngay</button> </td>
+                    </tr>
+                </table>
+            </div>
+            </div>
         </form>
     </div>
-    </div>
+    <?php
+include("footer.php");
+?>
+    
 </body>
 </html>
