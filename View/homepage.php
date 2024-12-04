@@ -112,7 +112,7 @@ if(isset($_POST['txtsub'])){
             ?>
             </div>
         </div>
-        <button type="button" class="btn btn-danger d-flex justify-content-center mx-auto mt-4 " style="width: 150px;">Xem thêm</button>
+        <a type="button" href="banhtrungthu.php" class="btn btn-danger d-flex justify-content-center mx-auto mt-4 " style="width: 150px;">Xem thêm</a>
     </div>
     <div class="pb-3"> <!--bánh sinh nhật--> 
     <h3 class="text-center pt-4 text-danger pb-3" style="text-transform: uppercase;">Bánh sinh nhật Mousse-Phomat-Tiramisu</h3>
@@ -142,7 +142,7 @@ if(isset($_POST['txtsub'])){
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4" style="width: 150px;">Xem thêm</button>
+    <a href="mouse.php" type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4" style="width: 150px;">Xem thêm</a>
     <div style="height : 25px">&nbsp; </div>
     <div> 
     </div>
@@ -173,7 +173,7 @@ if(isset($_POST['txtsub'])){
             ?>
             </div>
         </div>
-        <button type="button" class="btn btn-danger d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</button> 
+        <a href="kemtuoi-scl.php" type="button" class="btn btn-danger d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</a> 
         </div>
         
     <div> <!--Mini Cake--> 
@@ -204,7 +204,7 @@ if(isset($_POST['txtsub'])){
             </div>
         </div>
         </div>
-        <button type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</button>
+        <a href="minicake.php" type="button" class="btn btn-danger   d-flex justify-content-center mx-auto mt-4 mb-3" style="width: 150px;">Xem thêm</a>
         <div style="height : 25px">&nbsp; </div>
     </div>
     <div class="container mt-5 pb-5"> <!--khuyến mãi--> 
