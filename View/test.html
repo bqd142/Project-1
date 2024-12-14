@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table" width="800px">
+        <tr>
+            <th></th>
+            <th style="width: 400px;">Sản Phẩm</th>
+            <th style="width: 450px;">Giá</th>
+            <th style="width: 450px;">Số lượng</th>
+            <th style="width: 500px;float: right;">Tổng</th>
+        </tr>
+        <?php
+            foreach($sl_cart as $row){
+                $sl_pro = $product->select_id($row['product_id']);
+                $sl_pro = $sl_pro->fetch_assoc();
+        ?>
+        <tr>
+            <td><img class="rounded" width="100px" height="100px" src="../upload/<?php echo$sl_pro['hinhanh'];?>"> </td>
+            <td><?php echo $sl_pro['tensp'] ?></td>
+            <td><?php echo $sl_pro['gia'] ?></td>
+            <form method="post">
+            <td><input type="number" class="form-control" name="txtsl" style="width:70px;" min="0" value="<?php echo $row['Soluong'] ?>"></td>
+            <?php $sum = $sl_pro['gia'] * $row['Soluong']; 
+                $total+=$sum;
+            ?>
+            <td style="float: right;"><?php echo $sum ?> đ</td>
+        </tr>
+        
+        <?php
+            }
+        ?>
+        
+        <tr>
+            <td colspan="4" style="font-size:22px; color:red;font-weight: 600;"> Tổng </td>
+            <td style="font-size:22px;color:red;font-weight: 600;"> <?php echo $total ?> đ</td>
+        </tr>
+        <tr>
+        <td colspan="5"> <button type="submit" name="txtsub" style="height:40px; width:200px; float: right;margin-right:200px" class="btn btn-outline-danger">Cập nhật giỏ hàng</button> </td>
+        </tr>
+        <form method="post">
+        <tr>
+            <td colspan="3"> </td>
+            <td colspan="2"> <button class="btn btn-danger" name="txtsub" style="height:60px; width:280px; margin-left:300px;margin-top: 20px;">
+        Thanh toán
+        </button> </td>
+        </tr>
+        </form>
+    </table>
+</body>
+</html>

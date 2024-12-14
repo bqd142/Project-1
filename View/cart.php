@@ -23,13 +23,13 @@ $sl_cart = $cart->sl_cart_id(session_id());
 $total = 0;
 ?>
     <div class="container"  style="margin-top: 120px;" >
-    <table class="table">
+    <table class="table" width="800px">
         <tr>
             <th></th>
-            <th style="width: 400px;">Sản Phẩm</th>
-            <th style="width: 450px;">Giá</th>
-            <th style="width: 450px;">Số lượng</th>
-            <th style="width: 500px;">Tổng</th>
+            <th style="width: 500px;">SẢN PHẨM</th>
+            <th style="width: 550px;">GÍA</th>
+            <th style="width: 550px;">SỐ LƯỢNG</th>
+            <th style="width: 600px;text-align:right;">TỔNG</th>
         </tr>
         <?php
             foreach($sl_cart as $row){
@@ -40,23 +40,28 @@ $total = 0;
             <td><img class="rounded" width="100px" height="100px" src="../upload/<?php echo$sl_pro['hinhanh'];?>"> </td>
             <td><?php echo $sl_pro['tensp'] ?></td>
             <td><?php echo $sl_pro['gia'] ?></td>
-            <td><?php echo $row['Soluong'] ?></td>
+            <form method="post">
+            <td><input type="number" class="form-control" name="txtsl[<?= $row['cart_id'] ?>]" style="width:70px;" min="0" value="<?php echo $row['Soluong'] ?>"></td>
             <?php $sum = $sl_pro['gia'] * $row['Soluong']; 
                 $total+=$sum;
             ?>
-            <td><?php echo $sum ?> đ</td>
+            <td style="text-align:right;"><?php echo $sum ?> đ</td>
         </tr>
+        
         <?php
             }
         ?>
+        
         <tr>
             <td colspan="4" style="font-size:22px; color:red;font-weight: 600;"> Tổng </td>
-            <td style="font-size:22px;color:red;font-weight: 600;"> <?php echo $total ?> đ</td>
+            <td style="font-size:22px;color:red;font-weight: 600; text-align:right;"> <?php echo $total ?> đ</td>
         </tr>
-        <form method="post">
+        <tr>
+        <td colspan="5"> <button type="submit" name="txtupdate" style="height:40px; width:200px; float: right;" class="btn btn-outline-danger"> Cập nhật giỏ hàng</button> </td>
+        </tr>
         <tr>
             <td colspan="3"> </td>
-            <td colspan="2"> <button class="btn btn-danger" name="txtsub" style="height:40px; width:150px; margin-left:300px;margin-top: 20px;">
+            <td colspan="2"> <button class="btn btn-danger" name="txtsub" style="height:60px; width:280px; margin-top: 20px;float:right;">
         Thanh toán
         </button> </td>
         </tr>
@@ -68,9 +73,10 @@ if (isset($_POST['txtsub'])) {
     if ($total == 0) {
         echo "<script>alert('Đơn hàng trống');</script>";
     } else {
-        echo "<script>window.location.href = '../View/thanhtoan.php';</script>";
+        echo "<script>window.location.href = 'thanhtoan.php';</script>";
     }
 }
+include("../Control/update_cart.php");
 ?>
 <?php
 include("footer.php");

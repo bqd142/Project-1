@@ -62,8 +62,21 @@ $_SESSION['timeout'] = time();
                       <i class="fa-solid fa-user"></i>
                     </button>
                     <ul class="dropdown-menu" >
-                      <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
-                      <li><a class="dropdown-item" href="#">Đăng ký</a></li>
+                    <?php 
+                  if(isset($_SESSION['user_name'])){
+                    echo'
+                        <li><a class="dropdown-item" >Xin chào, ' . htmlspecialchars($_SESSION['user_name']) . '</a></li>
+                        <li><a class="dropdown-item" href="thongtindonhang.php">Thông tin đơn hàng</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="doimk.php">Đổi mật khẩu</a></li>
+                        <li><a class="dropdown-item" href="../Control/dangxuat.php">Đăng xuất</a></li>';
+                  } 
+                  else {
+                      echo 
+                      '<li><a class="dropdown-item" href="dangnhap.php">Đăng nhập</a></li>
+                       <li><a class="dropdown-item" href="dangky.php">Đăng ký</a></li>';
+                  }
+                ?>  
                     </ul>
                 </div>   
                 <a href="cart.php" class="text-light" style="margin-left: 15px;"><i class="fa-solid fa-cart-shopping"></i></a>             
