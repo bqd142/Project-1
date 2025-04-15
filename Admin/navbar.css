@@ -1,0 +1,35 @@
+.navbar-right {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 15px; /* Khoảng cách giữa các phần tử */
+    position: absolute;
+    top: 0;
+    right: 20px; /* Cách mép phải 20px */
+    height: 100%; /* Chiều cao bằng với thanh navbar */
+}
+
+.language-switcher {
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa các nút ngôn ngữ */
+    margin: 0;
+}
+
+.language-switcher button {
+    font-size: 12px;
+    padding: 10px 20px;
+}
+
+.user-greeting {
+    font-size: 14px;
+    color: #333;
+}
+
+.logout-link {
+    font-size: 14px;
+    color: #dc3545;
+    text-decoration: none;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}

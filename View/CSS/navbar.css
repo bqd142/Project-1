@@ -1,0 +1,147 @@
+.custom-navbar {
+    display: flex;
+    justify-content: center; /* Căn giữa các phần tử */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    background-color: #FFF5D7; /* Màu nền */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tạo bóng */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.custom-nav {
+    display: flex;
+    list-style: none;
+    gap: 40px; /* Khoảng cách đồng đều giữa các phần tử */
+    margin: 0;
+    padding: 0;
+}
+
+.custom-nav li {
+    position: relative;
+}
+
+.custom-nav a {
+    text-decoration: none;
+    color: #dc3545;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 15px;
+}
+
+.custom-nav a:hover {
+    color: black;
+}
+
+.custom-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f8f9fa;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-nav li:hover .custom-dropdown {
+    display: block;
+}
+
+.custom-nav li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f8f9fa; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-nav li:hover ul {
+    display: block;
+}
+
+.custom-nav li ul li {
+    width: 200px; 
+}
+
+.custom-nav li ul a {
+    padding: 10px;
+    color: #dc3545;
+    transition: color 0.3s ease; 
+}
+
+.custom-nav li ul a:hover {
+    color: black; 
+}
+
+
+.search-form {
+    width: 350px;
+    min-height: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    height: 45px;
+    padding: 10px 50px 10px 15px;
+    border: 2px solid red;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+    padding: 5px;
+}
+
+#start_view {
+    scroll-margin-top: -50px; /* Dời vị trí xuống 100px khi cuộn tới */
+}
+
+#cart-count {
+    position: absolute;
+    top: 0px;
+    right: -2px;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 6px 8px;
+    /* background-color: red; */
+    color: #e67e22;
+    font-weight: bold;
+}
+
+html[lang="jp"] {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.custom-nav .dropdown:hover {
+    background-color: inherit !important; /* Giữ nguyên màu nền */
+    transition: none !important; /* Loại bỏ hiệu ứng chuyển đổi */
+    cursor: default; /* Không thay đổi con trỏ chuột */
+}
